@@ -16,14 +16,21 @@
 $Id$
 """
 
+import os.path
+
 from setuptools import setup, find_packages
+
+
+here = os.path.dirname(os.path.abspath(__file__))
+resolve_txt = os.path.join(here, "src", "zope", "dottedname", "resolve.txt")
 
 setup(
     name="zope.dottedname",
-    version = '3.4.0b1',
+    version = '3.4.0',
     url='http://svn.zope.org/zope.dottedname',
     license='ZPL 2.1',
-    description='Zope dottedname',
+    description='Resolver for Python dotted names.',
+    long_description=open(resolve_txt).read().rstrip(),
     author='Zope Corporation and Contributors',
     author_email='zope3-dev@zope.org',
 
