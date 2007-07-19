@@ -26,7 +26,7 @@ resolve_txt = os.path.join(here, "src", "zope", "dottedname", "resolve.txt")
 
 setup(
     name="zope.dottedname",
-    version = '3.4.0',
+    version = '3.4.1',
     url='http://svn.zope.org/zope.dottedname',
     license='ZPL 2.1',
     description='Resolver for Python dotted names.',
