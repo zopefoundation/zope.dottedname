@@ -22,7 +22,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(name="zope.dottedname",
-      version = '3.4.1',
+      version = '3.4.2',
       author='Zope Corporation and Contributors',
       author_email='zope3-dev@zope.org',
       description='Resolver for Python dotted names.',
