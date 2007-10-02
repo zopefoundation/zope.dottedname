@@ -21,9 +21,6 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-here = os.path.dirname(os.path.abspath(__file__))
-resolve_txt = os.path.join(here, "src", "zope", "dottedname", "resolve.txt")
-
 setup(name="zope.dottedname",
       version = '3.4.1',
       author='Zope Corporation and Contributors',
