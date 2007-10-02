@@ -15,30 +15,51 @@
 
 $Id$
 """
-
-import os.path
-
+import os
 from setuptools import setup, find_packages
 
+def read(*rnames):
+    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 here = os.path.dirname(os.path.abspath(__file__))
 resolve_txt = os.path.join(here, "src", "zope", "dottedname", "resolve.txt")
 
-setup(
-    name="zope.dottedname",
-    version = '3.4.1',
-    url='http://svn.zope.org/zope.dottedname',
-    license='ZPL 2.1',
-    description='Resolver for Python dotted names.',
-    long_description=open(resolve_txt).read().rstrip(),
-    author='Zope Corporation and Contributors',
-    author_email='zope3-dev@zope.org',
-
-    packages=find_packages('src'),
-    package_dir={'':'src'},
-    namespace_packages=['zope'],
-    include_package_data=True,
-    install_requires = ['setuptools'],
-    zip_safe = False
-    )
+setup(name="zope.dottedname",
+      version = '3.4.1',
+      author='Zope Corporation and Contributors',
+      author_email='zope3-dev@zope.org',
+      description='Resolver for Python dotted names.',
+      long_description=(
+          read('README.txt')
+          + '\n\n' +
+          'Detailed Documentation' +
+          '----------------------'
+          + '\n\n' +
+          read('src', 'zope', 'dottedname', 'resolve.txt')
+          + '\n\n' +
+          read('CHANGES.txt')
+          ),
+      keywords = 'resolve dotted name',
+      classifiers = [
+          'Development Status :: 5 - Production/Stable',
+          'Environment :: Web Environment',
+          'Intended Audience :: Developers',
+          'License :: OSI Approved :: Zope Public License',
+          'Programming Language :: Python',
+          'Natural Language :: English',
+          'Operating System :: OS Independent',
+          'Topic :: Internet :: WWW/HTTP',
+          'Framework :: Zope3'],
+      url='http://cheeseshop.python.org/pypi/zope.dottedname',
+      license='ZPL 2.1',
+      packages=find_packages('src'),
+      package_dir = {'': 'src'},
+      namespace_packages=['zope'],
+      extras_require = dict(
+          test=['zope.testing'],
+          ),
+      install_requires = ['setuptools'],
+      include_package_data=True,
+      zip_safe = False
+      )
 
