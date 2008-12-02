@@ -26,15 +26,9 @@ setup(name="zope.dottedname",
       author='Zope Corporation and Contributors',
       author_email='zope3-dev@zope.org',
       description='Resolver for Python dotted names.',
-      long_description=(
-          read('README.txt')
-          + '\n\n' +
-          'Detailed Documentation' +
-          '----------------------'
-          + '\n\n' +
-          read('src', 'zope', 'dottedname', 'resolve.txt')
-          + '\n\n' +
-          read('CHANGES.txt')
+      long_description='\n\n'.join(
+          read('README.txt'),
+          read('CHANGES.txt'),
           ),
       keywords = 'resolve dotted name',
       classifiers = [
@@ -47,7 +41,7 @@ setup(name="zope.dottedname",
           'Operating System :: OS Independent',
           'Topic :: Internet :: WWW/HTTP',
           'Framework :: Zope3'],
-      url='http://cheeseshop.python.org/pypi/zope.dottedname',
+      url='http://pypi.python.org/pypi/zope.dottedname',
       license='ZPL 2.1',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
