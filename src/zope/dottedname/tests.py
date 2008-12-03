@@ -15,12 +15,15 @@
 
 $Id$
 """
-import unittest
-from zope.testing import doctest
+import os,unittest
+from zope.testing.doctest import DocFileSuite,REPORT_NDIFF,ELLIPSIS
 
 def test_suite():
     return unittest.TestSuite((
-        doctest.DocFileSuite('resolve.txt'),
+        DocFileSuite(
+            os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..','..','README.txt')),
+            optionflags=REPORT_NDIFF|ELLIPSIS
+            ),
         ))
 
 if __name__ == '__main__':
