@@ -25,10 +25,10 @@ setup(name="zope.dottedname",
       author='Zope Corporation and Contributors',
       author_email='zope-dev@zope.org',
       description='Resolver for Python dotted names.',
-      long_description='\n\n'.join(
+      long_description='\n\n'.join((
           read('README.txt'),
           read('CHANGES.txt'),
-          ),
+          )),
       keywords = 'resolve dotted name',
       classifiers = [
           'Development Status :: 5 - Production/Stable',
