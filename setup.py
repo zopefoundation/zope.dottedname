@@ -11,8 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Setup for zope.documenttemplate package
-
+"""
 $Id$
 """
 import os
@@ -22,7 +21,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(name="zope.dottedname",
-      version = '3.4.3dev',
+      version = '3.4.4dev',
       author='Zope Corporation and Contributors',
       author_email='zope-dev@zope.org',
       description='Resolver for Python dotted names.',
