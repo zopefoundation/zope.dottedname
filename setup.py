@@ -26,7 +26,7 @@ setup(name="zope.dottedname",
       author_email='zope-dev@zope.org',
       description='Resolver for Python dotted names.',
       long_description='\n\n'.join((
-          read('README.txt'),
+          read('src', 'zope', 'dottedname', 'README.txt'),
           read('CHANGES.txt'),
           )),
       keywords = 'resolve dotted name',

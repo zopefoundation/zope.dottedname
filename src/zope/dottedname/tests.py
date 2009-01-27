@@ -21,7 +21,7 @@ from zope.testing.doctest import DocFileSuite,REPORT_NDIFF,ELLIPSIS
 def test_suite():
     return unittest.TestSuite((
         DocFileSuite(
-            os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..','..','README.txt')),
+            os.path.abspath(os.path.join(os.path.dirname(__file__), 'README.txt')),
             optionflags=REPORT_NDIFF|ELLIPSIS,
             module_relative=False,
             ),
