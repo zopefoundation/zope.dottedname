@@ -22,7 +22,8 @@ def test_suite():
     return unittest.TestSuite((
         DocFileSuite(
             os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..','..','README.txt')),
-            optionflags=REPORT_NDIFF|ELLIPSIS
+            optionflags=REPORT_NDIFF|ELLIPSIS,
+            module_relative=False,
             ),
         ))
 
