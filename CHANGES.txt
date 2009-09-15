@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-3.4.6 (unreleased)
+3.4.6 (2009-09-15)
 ------------------
 
 - Make tests pass on python26.
