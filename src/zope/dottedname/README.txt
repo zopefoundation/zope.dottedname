@@ -50,7 +50,7 @@ Here are some examples of importing relative names::
   <built-in function system>
 
   >>> resolve('...datetime', 'os.path')
-  <module 'datetime' from '...'>
+  <module 'datetime' ...>
 
 NB: When relative names are imported, a module the name is relative to
 **must** be supplied::
