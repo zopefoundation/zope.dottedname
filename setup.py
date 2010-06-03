@@ -16,9 +16,6 @@
 # When developing and releasing this package, please follow the documented
 # Zope Toolkit policies as described by this documentation.
 ##############################################################################
-"""
-$Id$
-"""
 import os
 from setuptools import setup, find_packages
 
