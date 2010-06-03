@@ -12,8 +12,6 @@
 #
 ##############################################################################
 """test resolution of dotted names
-
-$Id$
 """
 import os,unittest
 from zope.testing.doctest import DocFileSuite,REPORT_NDIFF,ELLIPSIS

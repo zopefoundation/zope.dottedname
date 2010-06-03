@@ -12,8 +12,6 @@
 #
 ##############################################################################
 """Dotted name support
-
-$Id$
 """
 
 def resolve(name, module=None):
@@ -39,6 +37,3 @@ def resolve(name, module=None):
             found = getattr(found, n)
 
     return found
-
-    
-    
