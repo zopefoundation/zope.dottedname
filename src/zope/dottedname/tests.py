@@ -13,18 +13,14 @@
 ##############################################################################
 """test resolution of dotted names
 """
-import os,unittest
-from zope.testing.doctest import DocFileSuite,REPORT_NDIFF,ELLIPSIS
+import unittest
+import doctest
+import os
+
+README = os.path.abspath(os.path.join(os.path.dirname(__file__), 'README.txt'))
+FLAGS = doctest.REPORT_NDIFF | doctest.ELLIPSIS
 
 def test_suite():
     return unittest.TestSuite((
-        DocFileSuite(
-            os.path.abspath(os.path.join(os.path.dirname(__file__), 'README.txt')),
-            optionflags=REPORT_NDIFF|ELLIPSIS,
-            module_relative=False,
-            ),
-        ))
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
-
+        doctest.DocFileSuite(README, optionflags=FLAGS, module_relative=False),
+    ))
