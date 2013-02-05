@@ -1,0 +1,3 @@
+src/zope.dottedname.egg-info
+.tox
+*.py[co]
