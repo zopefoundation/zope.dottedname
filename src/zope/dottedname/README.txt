@@ -33,10 +33,10 @@ Here are some examples of importing absolute names::
   ...
   ImportError: No module named __doc__
 
-  >>> resolve('datetime.foo')
+  >>> resolve('logging.foo')
   Traceback (most recent call last):
   ...
-  ImportError: No module named foo
+  ImportError: No module named ...foo
 
   >>> resolve('os.path.split').__name__
   'split'
