@@ -1,9 +1,9 @@
-zope.dottedname
-===============
+``zope.dottedname``
+===================
 
 Resolve strings containing dotted names into the appropriate python object.
 
-See src/zope/dottedname/README.txt for more information.
+See ``src/zope/dottedname/README.txt`` for more information.
 
 Travis: |buildstatus|_
 winbot: |winbotstatus|_
