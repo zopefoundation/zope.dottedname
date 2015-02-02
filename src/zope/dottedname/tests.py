@@ -37,9 +37,23 @@ class Test_resolve(unittest.TestCase):
             self._callFUT('unittest.TestCase') is unittest.TestCase)
 
     def test_submodule(self):
-        import zope.dottedname
+        from zope import dottedname
         self.assertTrue(
-            self._callFUT('zope.dottedname') is zope.dottedname)
+            self._callFUT('zope.dottedname') is dottedname)
+
+    def test_submodule_not_yet_imported(self):
+        import sys
+        import zope.dottedname
+        try:
+            del sys.modules['zope.dottedname.example']
+        except KeyError:
+            pass
+        try:
+            del zope.dottedname.example
+        except AttributeError:
+            pass
+        found = self._callFUT('zope.dottedname.example')
+        self.assertTrue(found is sys.modules['zope.dottedname.example'])
 
     def test_submodule_attr(self):
         from zope.dottedname.resolve import resolve
@@ -53,6 +67,11 @@ class Test_resolve(unittest.TestCase):
         from zope.dottedname.resolve import resolve
         self.assertTrue(
             self._callFUT('.resolve.resolve', 'zope.dottedname') is resolve)
+
+    def test_relative_w_module_multiple_dots(self):
+        from zope.dottedname import resolve
+        self.assertTrue(
+            self._callFUT('..resolve', 'zope.dottedname.tests') is resolve)
 
 def test_suite():
     return unittest.TestSuite((

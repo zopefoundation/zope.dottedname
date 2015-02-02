@@ -4,6 +4,8 @@ Changes
 4.1.1 (unreleased)
 ------------------
 
+- 100% unit test coverage (including branches).
+
 - Convert doctests to Sphinx documentation, including building docs
   and running doctest snippets under ``tox``.
 
