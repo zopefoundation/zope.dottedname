@@ -1,3 +1,4 @@
 src/zope.dottedname.egg-info
 .tox
 *.py[co]
+docs/_build/

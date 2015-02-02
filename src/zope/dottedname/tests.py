@@ -14,36 +14,47 @@
 """test resolution of dotted names
 """
 import unittest
-import doctest
-import os
-import re
 
-from zope.testing.renormalizing import RENormalizing
 
-README = os.path.abspath(os.path.join(os.path.dirname(__file__), 'README.txt'))
-FLAGS = doctest.REPORT_NDIFF | doctest.ELLIPSIS
+class Test_resolve(unittest.TestCase):
+
+    def _callFUT(self, *args, **kw):
+        from zope.dottedname.resolve import resolve
+        return resolve(*args, **kw)
+
+    def test_no_dots_non_importable(self):
+        self.assertRaises(ImportError, 
+                          self._callFUT, '_non_importable_module_')
+
+    def test_no_dots(self):
+        self.assertTrue(self._callFUT('unittest') is unittest)
+
+    def test_module_attr_nonesuch(self):
+        self.assertRaises(ImportError, self._callFUT,'unittest.nonesuch')
+
+    def test_module_attr(self):
+        self.assertTrue(
+            self._callFUT('unittest.TestCase') is unittest.TestCase)
+
+    def test_submodule(self):
+        import zope.dottedname
+        self.assertTrue(
+            self._callFUT('zope.dottedname') is zope.dottedname)
+
+    def test_submodule_attr(self):
+        from zope.dottedname.resolve import resolve
+        self.assertTrue(
+            self._callFUT('zope.dottedname.resolve.resolve') is resolve)
+
+    def test_relative_no_module(self):
+        self.assertRaises(ValueError, self._callFUT,'.resolve')
+
+    def test_relative_w_module(self):
+        from zope.dottedname.resolve import resolve
+        self.assertTrue(
+            self._callFUT('.resolve.resolve', 'zope.dottedname') is resolve)
 
 def test_suite():
-    checker = RENormalizing([
-        # datetime is a class in Python 3, but a type in Python 2
-        (re.compile("<class 'datetime\.datetime'>"),
-         "<type 'datetime.datetime'>"),
-        # Python 3.2 adds quotes around the module name
-        (re.compile("ImportError: No module named '([^']*)'"),
-         r"ImportError: No module named \1"),
-        # and improves the message in other ways too
-        (re.compile(r"ImportError: No module named datetime\.foo;"
-                    " datetime is not a package"),
-         "ImportError: No module named foo"),
-        # PyPy 1.9 has some different error messages and reprs
-        (re.compile(r"ImportError: No module named datetime\.foo"),
-         "ImportError: No module named foo"),
-        (re.compile(r"<bound method type\.now of <type 'datetime\.datetime'>>"),
-         "<built-in method now of type object at ...>"),
-    ])
     return unittest.TestSuite((
-        doctest.DocFileSuite(README,
-                             checker=checker,
-                             optionflags=FLAGS,
-                             module_relative=False),
+        unittest.makeSuite(Test_resolve),
     ))
