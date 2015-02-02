@@ -15,6 +15,15 @@
 """
 
 def resolve(name, module=None):
+    """Resolve ``name`` to a Python object via imports / attribute lookups.
+
+    If ``module`` is None, ``name`` must be "absolute" (no leading dots).
+
+    If ``module`` is not None, and ``name`` is "relative" (has leading dots),
+    the object will be found by navigating relative to ``module``.
+
+    Returns the object, if found.  If not, propagates the error.
+    """
     name = name.split('.')
     if not name[0]:
         if module is None:
