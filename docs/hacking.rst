@@ -1,5 +1,5 @@
 Hacking on :mod:`zope.dottedname`
-==============================
+=================================
 
 
 Getting the Code
@@ -251,7 +251,7 @@ including building the docs and testing their snippets:
 
 
 Contributing to :mod:`zope.dottedname`
-###################################
+######################################
 
 Submitting a Bug Report
 -----------------------
