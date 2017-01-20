@@ -5,3 +5,8 @@ docs/_build/
 .coverage
 coverage.xml
 nosetests.xml
+.installed.cfg
+bin/
+develop-eggs/
+dist/
+build/
