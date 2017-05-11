@@ -24,7 +24,7 @@ def read(*rnames):
         return f.read()
 
 setup(name="zope.dottedname",
-      version='4.2',
+      version='4.3.dev0',
       author='Zope Foundation and Contributors',
       author_email='zope-dev@zope.org',
       description='Resolver for Python dotted names.',
