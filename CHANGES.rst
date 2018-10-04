@@ -4,7 +4,7 @@ Changes
 4.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add support for Python 3.7.
 
 
 4.2 (2017-05-11)

@@ -1,0 +1,6 @@
+[run]
+branch = True
+source = src/zope/dottedname
+
+[report]
+precision = 2
