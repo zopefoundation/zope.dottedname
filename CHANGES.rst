@@ -6,6 +6,8 @@ Changes
 
 - Add support for Python 3.7.
 
+- Drop support for Python 3.3.
+
 
 4.2 (2017-05-11)
 ----------------
