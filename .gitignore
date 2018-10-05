@@ -4,7 +4,6 @@ src/zope.dottedname.egg-info
 docs/_build/
 .coverage
 coverage.xml
-nosetests.xml
 .installed.cfg
 bin/
 develop-eggs/
