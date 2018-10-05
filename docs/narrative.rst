@@ -27,17 +27,17 @@ Here are some examples of importing absolute names:
    >>> resolve('non existent module')
    Traceback (most recent call last):
    ...
-   ImportError: No module named non existent module
+   ModuleNotFoundError: No module named non existent module
 
    >>> resolve('__doc__')
    Traceback (most recent call last):
    ...
-   ImportError: No module named __doc__
+   ModuleNotFoundError: No module named __doc__
 
    >>> resolve('logging.foo')
    Traceback (most recent call last):
    ...
-   ImportError: No module named ...foo
+   ModuleNotFoundError: No module named ...foo
 
    >>> resolve('os.path.split').__name__
    'split'
