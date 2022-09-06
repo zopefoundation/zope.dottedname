@@ -52,7 +52,7 @@ setup(name="zope.dottedname",
           'Operating System :: OS Independent',
           'Topic :: Internet :: WWW/HTTP',
           'Framework :: Zope :: 3'],
-      url='http://pypi.python.org/pypi/zope.dottedname',
+      url='https://github.com/zopefoundation/zope.dottedname',
       license='ZPL 2.1',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
@@ -60,10 +60,12 @@ setup(name="zope.dottedname",
       install_requires = ['setuptools'],
       extras_require = {
           'testing': [],
+          'docs': [
+              'Sphinx',
+          ]
       },
       tests_require = [],
       test_suite='zope.dottedname.tests.test_suite',
       include_package_data=True,
       zip_safe = False
       )
-
