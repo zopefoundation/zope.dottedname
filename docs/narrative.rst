@@ -21,8 +21,8 @@ Here are some examples of importing absolute names:
    >>> resolve('datetime.datetime')(2015, 2, 2, 18, 59, 27)
    datetime.datetime(2015, 2, 2, 18, 59, 27)
 
-   >>> resolve('datetime.datetime.now')
-   <built-in method now of type object at ...>
+   >>> resolve('os.path.basename')
+   <function basename at ...>
 
    >>> resolve('non existent module')
    Traceback (most recent call last):
@@ -64,4 +64,3 @@ NB: When relative names are imported, a module the name is relative to
    Traceback (most recent call last):
    ...
    ValueError: relative name without base module
-

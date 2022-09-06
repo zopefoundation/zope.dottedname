@@ -1,4 +1,4 @@
 # sample module for testing
 
-def example():  # pragma: NO COVER
+def example():  # pragma: no cover
     pass
