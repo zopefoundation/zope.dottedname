@@ -43,6 +43,7 @@ class Test_resolve(unittest.TestCase):
 
     def test_submodule_not_yet_imported(self):
         import sys
+
         import zope.dottedname
         try:
             del sys.modules['zope.dottedname.example']
