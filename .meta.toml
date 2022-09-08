@@ -20,3 +20,8 @@ testenv-deps = [
 
 [coverage]
 fail-under = 100
+
+[manifest]
+additional-rules = [
+    "recursive-include docs *.bat",
+    ]
