@@ -1,7 +1,7 @@
 Changes
 =======
 
-5.0 (unreleased)
+5.0 (2022-09-08)
 ----------------
 
 - Add support for Python 3.8, 3.9, 3.10.
