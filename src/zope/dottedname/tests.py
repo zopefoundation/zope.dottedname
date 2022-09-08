@@ -23,14 +23,14 @@ class Test_resolve(unittest.TestCase):
         return resolve(*args, **kw)
 
     def test_no_dots_non_importable(self):
-        self.assertRaises(ImportError, 
+        self.assertRaises(ImportError,
                           self._callFUT, '_non_importable_module_')
 
     def test_no_dots(self):
         self.assertTrue(self._callFUT('unittest') is unittest)
 
     def test_module_attr_nonesuch(self):
-        self.assertRaises(ImportError, self._callFUT,'unittest.nonesuch')
+        self.assertRaises(ImportError, self._callFUT, 'unittest.nonesuch')
 
     def test_module_attr(self):
         self.assertTrue(
@@ -62,7 +62,7 @@ class Test_resolve(unittest.TestCase):
             self._callFUT('zope.dottedname.resolve.resolve') is resolve)
 
     def test_relative_no_module(self):
-        self.assertRaises(ValueError, self._callFUT,'.resolve')
+        self.assertRaises(ValueError, self._callFUT, '.resolve')
 
     def test_relative_w_module(self):
         from zope.dottedname.resolve import resolve
@@ -73,6 +73,7 @@ class Test_resolve(unittest.TestCase):
         from zope.dottedname import resolve
         self.assertTrue(
             self._callFUT('..resolve', 'zope.dottedname.tests') is resolve)
+
 
 def test_suite():
     return unittest.TestSuite((

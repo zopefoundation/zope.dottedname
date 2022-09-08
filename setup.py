@@ -26,6 +26,7 @@ def read(*rnames):
     with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
         return f.read()
 
+
 setup(name="zope.dottedname",
       version='5.0.dev0',
       author='Zope Foundation and Contributors',
@@ -34,9 +35,9 @@ setup(name="zope.dottedname",
       long_description='\n\n'.join((
           read('README.rst'),
           read('CHANGES.rst'),
-          )),
-      keywords = 'resolve dotted name',
-      classifiers = [
+      )),
+      keywords='resolve dotted name',
+      classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Web Environment',
           'Intended Audience :: Developers',
@@ -56,17 +57,17 @@ setup(name="zope.dottedname",
       url='https://github.com/zopefoundation/zope.dottedname',
       license='ZPL 2.1',
       packages=find_packages('src'),
-      package_dir = {'': 'src'},
+      package_dir={'': 'src'},
       namespace_packages=['zope'],
-      install_requires = ['setuptools'],
-      extras_require = {
+      install_requires=['setuptools'],
+      extras_require={
           'testing': [],
           'docs': [
               'Sphinx',
           ]
       },
-      tests_require = [],
+      tests_require=[],
       test_suite='zope.dottedname.tests.test_suite',
       include_package_data=True,
-      zip_safe = False
+      zip_safe=False
       )

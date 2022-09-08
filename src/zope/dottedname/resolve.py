@@ -14,6 +14,7 @@
 """Dotted name support
 """
 
+
 def resolve(name, module=None):
     """Resolve ``name`` to a Python object via imports / attribute lookups.
 
