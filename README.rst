@@ -5,8 +5,8 @@
     :target: https://pypi.python.org/pypi/zope.dottedname/
     :alt: Latest Version
 
-.. image:: https://travis-ci.com/zopefoundation/zope.dottedname.svg?branch=master
-        :target: https://travis-ci.com/zopefoundation/zope.dottedname
+.. image:: https://github.com/zopefoundation/zope.dottedname/actions/workflows/tests.yml/badge.svg
+        :target: https://github.com/zopefoundation/zope.dottedname/actions/workflows/tests.yml
 
 .. image:: https://readthedocs.org/projects/zopedottedname/badge/?version=latest
         :target: http://zopedottedname.readthedocs.org/en/latest/
