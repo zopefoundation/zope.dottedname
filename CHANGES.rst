@@ -4,7 +4,7 @@ Changes
 5.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Remove setuptools dependency
 
 
 5.0 (2022-09-08)

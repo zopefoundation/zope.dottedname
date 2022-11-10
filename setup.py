@@ -61,7 +61,6 @@ setup(name="zope.dottedname",
       packages=find_packages('src'),
       package_dir={'': 'src'},
       namespace_packages=['zope'],
-      install_requires=['setuptools'],
       extras_require={
           'testing': [],
           'docs': [
