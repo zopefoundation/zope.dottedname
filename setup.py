@@ -12,7 +12,7 @@
 #
 ##############################################################################
 # This package is developed by the Zope Toolkit project, documented here:
-# http://docs.zope.org/zopetoolkit
+# https://zopetoolkit.readthedocs.io/
 # When developing and releasing this package, please follow the documented
 # Zope Toolkit policies as described by this documentation.
 ##############################################################################
@@ -30,7 +30,7 @@ def read(*rnames):
 setup(name="zope.dottedname",
       version='6.0.dev0',
       author='Zope Foundation and Contributors',
-      author_email='zope-dev@zope.org',
+      author_email='zope-dev@zope.dev',
       description='Resolver for Python dotted names.',
       long_description='\n\n'.join((
           read('README.rst'),
@@ -61,6 +61,7 @@ setup(name="zope.dottedname",
       packages=find_packages('src'),
       package_dir={'': 'src'},
       namespace_packages=['zope'],
+      python_requires='>=3.7',
       install_requires=['setuptools'],
       extras_require={
           'testing': [],
