@@ -1,7 +1,7 @@
 Changes
 =======
 
-5.1 (unreleased)
+6.0 (unreleased)
 ----------------
 
 - Nothing changed yet.
