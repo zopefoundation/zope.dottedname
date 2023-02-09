@@ -6,7 +6,7 @@ Changes
 
 - Add support for Python 3.11.
 
-- Drop support for Python 2.7, 3.5, 3.6.
+- Drop support for Python 3.6.
 
 
 5.0 (2022-09-08)
@@ -14,7 +14,7 @@ Changes
 
 - Add support for Python 3.8, 3.9, 3.10.
 
-- Drop support for Python 2, 3.4, 3.5.
+- Drop support for Python 2.7, 3.4, 3.5.
 
 
 4.3 (2018-10-05)
