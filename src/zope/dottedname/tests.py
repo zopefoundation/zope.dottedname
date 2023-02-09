@@ -77,5 +77,5 @@ class Test_resolve(unittest.TestCase):
 
 def test_suite():
     return unittest.TestSuite((
-        unittest.makeSuite(Test_resolve),
+        unittest.defaultTestLoader.loadTestsFromTestCase(Test_resolve),
     ))
