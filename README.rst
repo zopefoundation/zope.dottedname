@@ -1,9 +1,9 @@
 ``zope.dottedname``
 ===================
-
-.. image:: https://pypip.in/version/zope.dottedname/badge.svg?style=flat
-    :target: https://pypi.python.org/pypi/zope.dottedname/
-    :alt: Latest Version
+    
+.. image:: https://img.shields.io/pypi/v/zope.dottedname.svg
+        :target: https://pypi.python.org/pypi/zope.dottedname/
+        :alt: Latest release
 
 .. image:: https://github.com/zopefoundation/zope.dottedname/actions/workflows/tests.yml/badge.svg
         :target: https://github.com/zopefoundation/zope.dottedname/actions/workflows/tests.yml
