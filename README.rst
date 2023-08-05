@@ -13,3 +13,5 @@
         :alt: Documentation Status
 
 Resolve strings containing dotted names into the appropriate python object.
+
+- `Read documentation <https://zopedottedname.readthedocs.io/>`__
