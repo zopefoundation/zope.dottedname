@@ -12,4 +12,4 @@
         :target: http://zopedottedname.readthedocs.org/en/latest/
         :alt: Documentation Status
 
-Resolve strings containing dotted names into the appropriate python object.
+Resolve strings containing dotted names into the appropriate Python object.
