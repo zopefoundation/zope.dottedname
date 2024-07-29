@@ -69,8 +69,6 @@ setup(name="zope.dottedname",
               'Sphinx',
           ]
       },
-      tests_require=[],
-      test_suite='zope.dottedname.tests.test_suite',
       include_package_data=True,
       zip_safe=False
       )
