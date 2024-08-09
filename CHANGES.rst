@@ -4,7 +4,7 @@ Changes
 6.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop support for Python 3.7.
 
 
 6.0 (2023-03-27)
