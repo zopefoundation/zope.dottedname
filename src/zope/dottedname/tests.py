@@ -23,14 +23,15 @@ class Test_resolve(unittest.TestCase):
         return resolve(*args, **kw)
 
     def test_no_dots_non_importable(self):
-        self.assertRaises(ImportError,
-                          self._callFUT, '_non_importable_module_')
+        self.assertRaises(ModuleNotFoundError, self._callFUT,
+                          '_non_importable_module_')
 
     def test_no_dots(self):
         self.assertTrue(self._callFUT('unittest') is unittest)
 
     def test_module_attr_nonesuch(self):
-        self.assertRaises(ImportError, self._callFUT, 'unittest.nonesuch')
+        self.assertRaises(ModuleNotFoundError, self._callFUT,
+                          'unittest.nonesuch')
 
     def test_module_attr(self):
         self.assertTrue(
@@ -38,8 +39,7 @@ class Test_resolve(unittest.TestCase):
 
     def test_submodule(self):
         from zope import dottedname
-        self.assertTrue(
-            self._callFUT('zope.dottedname') is dottedname)
+        self.assertTrue(self._callFUT('zope.dottedname') is dottedname)
 
     def test_submodule_not_yet_imported(self):
         import sys
@@ -76,6 +76,5 @@ class Test_resolve(unittest.TestCase):
 
 
 def test_suite():
-    return unittest.TestSuite((
-        unittest.defaultTestLoader.loadTestsFromTestCase(Test_resolve),
-    ))
+    return unittest.TestSuite(
+        (unittest.defaultTestLoader.loadTestsFromTestCase(Test_resolve), ))
