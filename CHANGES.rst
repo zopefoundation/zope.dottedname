@@ -4,6 +4,8 @@ Changes
 6.1 (unreleased)
 ----------------
 
+- Drop support for Python 3.8.
+
 - Add support for Python 3.12.
 
 - Drop support for Python 3.7.
