@@ -27,19 +27,21 @@ class Test_resolve(unittest.TestCase):
                           '_non_importable_module_')
 
     def test_no_dots(self):
-        self.assertTrue(self._callFUT('unittest') is unittest)
+        self.assertIs(self._callFUT('unittest'), unittest)
 
     def test_module_attr_nonesuch(self):
         self.assertRaises(ModuleNotFoundError, self._callFUT,
                           'unittest.nonesuch')
 
     def test_module_attr(self):
-        self.assertTrue(
-            self._callFUT('unittest.TestCase') is unittest.TestCase)
+        self.assertIs(
+            self._callFUT('unittest.TestCase'),
+            unittest.TestCase
+        )
 
     def test_submodule(self):
         from zope import dottedname
-        self.assertTrue(self._callFUT('zope.dottedname') is dottedname)
+        self.assertIs(self._callFUT('zope.dottedname'), dottedname)
 
     def test_submodule_not_yet_imported(self):
         import sys
@@ -54,25 +56,31 @@ class Test_resolve(unittest.TestCase):
         except AttributeError:
             pass
         found = self._callFUT('zope.dottedname.example')
-        self.assertTrue(found is sys.modules['zope.dottedname.example'])
+        self.assertIs(found, sys.modules['zope.dottedname.example'])
 
     def test_submodule_attr(self):
         from zope.dottedname.resolve import resolve
-        self.assertTrue(
-            self._callFUT('zope.dottedname.resolve.resolve') is resolve)
+        self.assertIs(
+            self._callFUT('zope.dottedname.resolve.resolve'),
+            resolve
+        )
 
     def test_relative_no_module(self):
         self.assertRaises(ValueError, self._callFUT, '.resolve')
 
     def test_relative_w_module(self):
         from zope.dottedname.resolve import resolve
-        self.assertTrue(
-            self._callFUT('.resolve.resolve', 'zope.dottedname') is resolve)
+        self.assertIs(
+            self._callFUT('.resolve.resolve', 'zope.dottedname'),
+            resolve
+        )
 
     def test_relative_w_module_multiple_dots(self):
         from zope.dottedname import resolve
-        self.assertTrue(
-            self._callFUT('..resolve', 'zope.dottedname.tests') is resolve)
+        self.assertIs(
+            self._callFUT('..resolve', 'zope.dottedname.tests'),
+            resolve
+        )
 
 
 def test_suite():
