@@ -18,7 +18,6 @@
 ##############################################################################
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -28,7 +27,7 @@ def read(*rnames):
 
 
 setup(name="zope.dottedname",
-      version='6.2.dev0',
+      version='7.0.dev0',
       author='Zope Foundation and Contributors',
       author_email='zope-dev@zope.dev',
       description='Resolver for Python dotted names.',
@@ -58,9 +57,6 @@ setup(name="zope.dottedname",
       ],
       url='https://github.com/zopefoundation/zope.dottedname',
       license='ZPL-2.1',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['zope'],
       python_requires='>=3.9',
       install_requires=['setuptools'],
       extras_require={
