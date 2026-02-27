@@ -4,7 +4,7 @@ Changes
 7.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop support for Python 3.9.
 
 
 7.0 (2025-09-12)
