@@ -82,6 +82,30 @@ class Test_resolve(unittest.TestCase):
             resolve
         )
 
+    def test_dots_only_single_dot_returns_module_itself(self):
+        import zope.dottedname
+        self.assertIs(
+            self._callFUT('.', 'zope.dottedname'),
+            zope.dottedname
+        )
+
+    def test_dots_only_two_dots_returns_parent_module(self):
+        import zope.dottedname
+        self.assertIs(
+            self._callFUT('..', 'zope.dottedname.tests'),
+            zope.dottedname
+        )
+
+    def test_dots_only_beyond_top_level_raises_value_error(self):
+        self.assertRaises(
+            ValueError, self._callFUT, '...', 'zope.dottedname'
+        )
+
+    def test_relative_multiple_dots_beyond_top_level_raises_value_error(self):
+        self.assertRaises(
+            ValueError, self._callFUT, '....resolve', 'zope.dottedname'
+        )
+
 
 def test_suite():
     return unittest.TestSuite(

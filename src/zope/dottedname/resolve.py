@@ -25,16 +25,36 @@ def resolve(name, module=None):
 
     Returns the object, if found.  If not, propagates the error.
     """
-    name = name.split('.')
-    if not name[0]:
+    orig_name = name
+    parts = name.split('.')
+    if not parts[0]:
         if module is None:
             raise ValueError("relative name without base module")
-        module = module.split('.')
-        name.pop(0)
-        while not name[0]:
-            module.pop()
-            name.pop(0)
-        name = module + name
+        # A name made up of nothing but dots (e.g. '.' or '..') splits
+        # into one more empty segment than the equivalent name that is
+        # followed by an actual attribute name (e.g. '.foo' or '..foo'),
+        # because of the implicit empty segment after the trailing dot.
+        # Drop that extra segment so both forms count leading dots the
+        # same way.
+        if not name.strip('.') and parts[-1] == '':
+            parts.pop()
+        module_parts = module.split('.')
+        parts.pop(0)
+        while parts and not parts[0]:
+            if not module_parts:
+                raise ValueError(
+                    "'%s' goes above the top-level package '%s'"
+                    % (orig_name, module))
+            module_parts.pop()
+            parts.pop(0)
+        parts = module_parts + parts
+        if not parts:
+            raise ValueError(
+                "'%s' leaves nothing to resolve relative to '%s'"
+                % (orig_name, module))
+        name = parts
+    else:
+        name = parts
 
     used = name.pop(0)
     found = __import__(used)

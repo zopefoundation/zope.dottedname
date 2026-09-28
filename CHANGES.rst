@@ -4,7 +4,13 @@ Changes
 7.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix ``resolve()`` raising an unhelpful ``IndexError`` for a relative
+  name made up of nothing but dots (such as ``"."`` or ``".."``).  Such
+  a name is now resolved to the base module itself, or to one of its
+  ancestor packages, matching the behaviour of a dotted name that has
+  actual name components after the dots (such as ``".foo"`` or
+  ``"..foo"``).  A relative name that goes above the top-level package
+  now raises a clear ``ValueError`` instead of crashing.
 
 
 7.1 (2026-03-02)
