@@ -1,6 +1,6 @@
 ``zope.dottedname``
 ===================
-    
+
 .. image:: https://img.shields.io/pypi/v/zope.dottedname.svg
         :target: https://pypi.python.org/pypi/zope.dottedname/
         :alt: Latest release
