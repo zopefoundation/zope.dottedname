@@ -2,6 +2,5 @@
 ==========================
 
 .. automodule:: zope.dottedname.resolve
-   
-   .. autofunction:: resolve
 
+   .. autofunction:: resolve

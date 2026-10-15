@@ -97,11 +97,11 @@ you can see how well the tests cover the code:
    ...........
    Name                         Stmts   Miss Branch BrPart  Cover   Missing
    ------------------------------------------------------------------------
-   zope/dottedname.py               0      0      0      0   100%   
-   zope/dottedname/example.py       0      0      0      0   100%   
-   zope/dottedname/resolve.py      22      0      8      0   100%   
+   zope/dottedname.py               0      0      0      0   100%
+   zope/dottedname/example.py       0      0      0      0   100%
+   zope/dottedname/resolve.py      22      0      8      0   100%
    ------------------------------------------------------------------------
-   TOTAL                           22      0      8      0   100%   
+   TOTAL                           22      0      8      0   100%
    ----------------------------------------------------------------------
    Ran 11 tests in 0.000s
 
@@ -186,7 +186,7 @@ tool designed to run tests against multiple Python versions.  It creates
 a ``virtualenv`` for each configured version, installs the current package
 and configured dependencies into each ``virtualenv``, and then runs the
 configured commands.
-   
+
 :mod:`zope.dottedname` configures the following :mod:`tox` environments via
 its ``tox.ini`` file:
 
